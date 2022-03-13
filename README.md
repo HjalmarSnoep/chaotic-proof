@@ -34,7 +34,7 @@ In other words: Just playing around. Maybe you might even call this... art?
 - evolving the parameters to match as closely as possible any given image, for it to be used as a possibly ridonculous image compression tool.
 - Timing to audio, by having bands/instruments map to parameters.
 - 3D pointcloud visualisation and Blender Export, just for fun and bragging rights on youtube..
-- Possible application in deep neural maps?
+- Possible application describing/matching/predicting clusters in deep neural maps?
 - Calculating the fractal dimension and searching for a parameter correlation. 
    (a bit nerdy to my taste, but if anybody wants to, please.. I feel there is a connection, where more balanced opposing forces (shrink/grow, translate left/right) lead to a lower fractal dimension.)
 
