@@ -2,10 +2,10 @@
 Exploring fractal complexity from JUST iterated linear equation sets and random selection of these sets.
 A surprisingly big fraction (estimated 0.9) of strange attractors in the described, purely linear system seem 
 to have fractal properties. Experimentation has shown this occurs in a 2D field of 3 sets of 2 linear equations that take the form
-''' 
+```
 x'=ax+b, where
 -1.1 > a > 1.1 AND -2.1 > b > 2.1
-'''
+```
 In higher complexities (more sets) and higher dimensionalities (larger sets, like x,y,z) fractal properties are less evident, but I highly suspect they will be found.
 
 ## Interactive version (code in docs)
