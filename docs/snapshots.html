@@ -1,0 +1,210 @@
+<!doctype HTML>
+<html>
+<head>
+	<style>
+	   body{
+		font-family: sans-serif;
+		}
+	</style>
+	<title>Proof of complexity from linear equations</title>
+</head>
+<body>
+<h1>Snapshots</h1>
+<div id="links"><h2>Snapshots</h2>
+<button id="new set">Random New Set</button>
+<button id="take snapshot">Take snapshot(0)</button>
+<div id="snapshots">
+</div>
+</div>
+<script>
+// define the equation element
+var show_equations=document.createElement("div");
+show_equations.style.padding="5px";
+var links=document.getElementById("links");
+var snapshots=[];
+document.getElementById("take snapshot").addEventListener("click",takeSnapshot);
+document.getElementById("new set").addEventListener("click",newSet);
+var zoom=document.createElement("p");
+var w=500;
+var h=500;
+var p=[];
+var nr=3;
+var pointcount=0;
+var brush={x:0,y:0,r:256*Math.random(),g:256*Math.random(),b:256*Math.random()};
+var canvas=document.createElement("canvas");
+canvas.style.border="1px solid #f00";
+canvas.style.width="30%";
+canvas.style.minWidth="500px";
+show_equations.style.width="30%";
+show_equations.style.display="inline-block";
+show_equations.style.minWidth="500px";
+show_equations.style.verticalAlign="top";
+document.body.appendChild(canvas);
+document.body.appendChild(show_equations);
+var ctx=canvas.getContext("2d");
+canvas.width=w;
+canvas.height=h;
+var calczoom=true,minx,maxx;
+var miny,maxy;
+
+if(location.hash!="")
+{
+	console.log(location.hash.substr(1));
+	console.log(atob(location.hash.substr(1)));
+	setupSnapshot(JSON.parse(atob(location.hash.substr(1))));
+}else{
+	newSet();
+}
+function setupSnapshot(snapshot)
+{
+	calczoom=false;
+	minx=snapshot.zoom.minx;
+	maxx=snapshot.zoom.maxx;
+	miny=snapshot.zoom.miny;
+	maxy=snapshot.zoom.maxy;
+	
+	pointcount=0;
+	brush={x:0,y:0,r:256*Math.random(),g:256*Math.random(),b:256*Math.random()};
+	  ctx.fillStyle="rgba(255,255,255,1)";
+	  ctx.fillRect(0,0,w,h);
+	  str="";
+		for(var i=0;i<nr;i++)
+		{
+			p[i]=snapshot.equations[i];
+
+				str+="<fieldset style='position: relative;'>";
+				str+="<legend>";
+				str+="EQUATION "+(i+1);
+				str+="</legend>";
+				str+="x'="+p[i].a+"*x";
+				if(p[i].b>=0) str+="+"
+				str+=p[i].b;
+				str+="<br>";
+				str+="y'="+p[i].c+"*y";
+				if(p[i].d>=0) str+="+"
+				str+=p[i].d;
+				str+="<div style='width: 25px; height:25px; position: absolute; right: 15px; top: 15px; border: 1px solid #000;";
+                str+=" background-color: rgb("+p[i].col.r+","+p[i].col.g+","+p[i].col.b+");'> </div>"
+				str+="</fieldset>";
+				str+="<div id='zoom'></div>"
+		}
+		show_equations.innerHTML=str;
+		show_equations.appendChild(zoom);
+		show_equations.appendChild(links);
+		animate();
+
+
+}
+function newSet()
+{
+		minx=1000;
+		maxx=-1000;
+		miny=1000;
+		maxy=-1000;
+		calczoom=true;
+      // reset..
+	  pointcount=0;
+	  brush={x:0,y:0,r:256*Math.random(),g:256*Math.random(),b:256*Math.random()};
+	  ctx.fillStyle="rgba(255,255,255,1)";
+	  ctx.fillRect(0,0,w,h);
+	  str="";
+		for(var i=0;i<nr;i++)
+		{		p[i]={
+			a:Math.round( (-1.1+2.2*Math.random())*100 )/100,
+			b:Math.round( (-2.1+4.2*Math.random())*100 )/100,
+			c:Math.round( (-1.1+2.2*Math.random())*100 )/100,
+			d:Math.round( (-2.1+4.2*Math.random())*100 )/100,
+				col: { 
+					 r:256*Math.random(),
+					 g:256*Math.random(),
+					 b:256*Math.random()}
+				};
+				str+="<fieldset style='position: relative;'>";
+				str+="<legend>";
+				str+="EQUATION "+(i+1);
+				str+="</legend>";
+				str+="x'="+p[i].a+"*x";
+				if(p[i].b>=0) str+="+"
+				str+=p[i].b;
+				str+="<br>";
+				str+="y'="+p[i].c+"*y";
+				if(p[i].d>=0) str+="+"
+				str+=p[i].d;
+				str+="<div style='width: 25px; height:25px; position: absolute; right: 15px; top: 15px; border: 1px solid #000;";
+                str+=" background-color: rgb("+p[i].col.r+","+p[i].col.g+","+p[i].col.b+");'> </div>"
+				str+="</fieldset>";
+				str+="<div id='zoom'></div>"
+		}
+		show_equations.innerHTML=str;
+		show_equations.appendChild(zoom);
+		show_equations.appendChild(links);
+		animate();
+
+}
+function animate()
+{
+	var points=[];
+    for(var t=0;t<10000;t++)
+	{
+		pointcount++;
+		var r=Math.floor(Math.random()*p.length);
+		// adjust brush color..
+		brush.r=p[r].col.r;
+		brush.g=p[r].col.g;
+		brush.b=p[r].col.b;
+		ctx.fillStyle="rgba("+Math.floor(brush.r)+","+Math.floor(brush.g)+","+Math.floor(brush.b)+",0.01)";
+		
+		// adjust brush position..
+		brush.x=brush.x*p[r].a+p[r].b;
+		brush.y=brush.y*p[r].c+p[r].d;
+		
+		if(calczoom)
+		{
+			if(brush.x<minx) minx=brush.x;
+			if(brush.y<miny) miny=brush.y;
+			if(brush.x>maxx) maxx=brush.x;
+			if(brush.y>maxy) maxy=brush.y;
+		}
+		points.push({x:brush.x,y:brush.y});
+	}
+	zoom.innerHTML="pointcount: "+pointcount+"<br>minx: "+minx+"<br>"+"maxx: "+maxx+"<br>miny: "+miny+"<br>"+"maxy: "+maxy+"<br>"
+    for(var t=0;t<10000;t++)
+	{
+		if((maxy-miny)!=0 && (maxx-minx)!=0)
+		ctx.fillRect(w*(points[t].x-minx)/(maxx-minx),h*(points[t].y-miny)/(maxy-miny),1,1);
+	}	
+	if(pointcount<1000000)
+		window.requestAnimationFrame(animate);
+	else
+		{
+		// create hash
+			var snapshot={};
+		    snapshot.equations=JSON.parse(JSON.stringify(p));
+		    snapshot.zoom={minx:minx,maxx:maxx,miny:miny,maxy:maxy};
+			var hash=btoa(JSON.stringify(snapshot));
+			location.hash=hash;
+		}
+}
+function takeSnapshot()
+{
+  var snapshot={};
+  snapshot.equations=JSON.parse(JSON.stringify(p));
+  snapshot.zoom={minx:minx,maxx:maxx,miny:miny,maxy:maxy};
+  snapshot.canvas=document.createElement("canvas");
+  snapshot.canvas.style="border: 1px solid #000";
+  snapshot.canvas.width=50;
+  snapshot.canvas.height=50;
+  snapshot.canvas.getContext("2d").drawImage(canvas,0,0,500,500,0,0,50,50);
+  snapshots.push(snapshot);
+  var snapshots_container=document.getElementById("snapshots");
+  snapshots.innerHTML="";
+  for(var i=0;i<snapshots.length;i++)
+  {
+	snapshots_container.appendChild(snapshots[i].canvas);
+  
+  }
+  document.getElementById("take snapshot").innerHTML="take Snapshot ("+snapshots.length+")";
+}
+</script>
+</body>
+</htML>
