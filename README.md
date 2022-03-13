@@ -36,5 +36,5 @@ In other words: Just playing around. Maybe you might even call this... art?
 - 3D pointcloud visualisation and Blender Export, just for fun and bragging rights on youtube..
 - Possible application describing/matching/predicting clusters in deep neural maps?
 - Calculating the fractal dimension and searching for a parameter correlation. 
-   (a bit nerdy to my taste, but if anybody wants to, please.. I feel there is a connection, where more balanced opposing forces (shrink/grow, translate left/right) lead to a lower fractal dimension.)
+   (a bit hard-boiled to my taste, seems like work.. but if anybody wants to, I'd be interested in the results.. I feel there is a connection, where more balanced opposing forces (shrink/grow, translate left/right) lead to a lower fractal dimension.)
 
