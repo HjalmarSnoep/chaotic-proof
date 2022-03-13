@@ -1,5 +1,5 @@
 # linear chaos?
-Attempt at a visual/animated proof of fractal complexity from JUST linear equation sets and random selection of these sets.
+Exploring fractal complexity from JUST linear equation sets and random selection of these sets.
 
 ## Interactive version (code in docs)
 https://hjalmarsnoep.github.io/chaotic-proof/
