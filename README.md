@@ -1,7 +1,7 @@
 # chaotic-proof
 Attempt at proof of fractal complexity from linear equations.
-I have had this in my head since I was 19, never made a clear version of it. I used it to create 'magic particle' effects for animations back in 2001.
-Don't know if it has been done already (probably, but hey)..
+I have had this in my head since I was 19, never made a clear version of it. I used it to create 'magic particle' effects for animations back in 2001 on an amiga, happy that javascript now is WAY more powerful now, then that ever was..
+Don't know if an actual proof has been done already (probably)..
 
 I don't really have a plan with this, beyond proving it to my own satisfaction and getting a feel for chaotic systems, 
 by exploring this most simple and versatile one.
