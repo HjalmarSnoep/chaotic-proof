@@ -5,8 +5,6 @@ Attempt at a visual/animated proof of fractal complexity from JUST linear equati
 https://hjalmarsnoep.github.io/chaotic-proof/
 
 ## examples of sets of 6 linear equations (3x2) for two dimensional fractals
-I feel these are CLEARLY and self evidently fractals.
-Actual proof might be trying to zoom in and finding the same structures.
 ![snapshot1](https://hjalmarsnoep.github.io/chaotic-proof/snapshot-images/snap001.png)
 ![snapshot14](https://hjalmarsnoep.github.io/chaotic-proof/snapshot-images/snap014.png)
 ![snapshot15](https://hjalmarsnoep.github.io/chaotic-proof/snapshot-images/snap015.png)
@@ -25,6 +23,7 @@ In other words: Just playing around. Maybe you might even call this... art?
 ## Possible next steps:
 - Check pre existing literature for mention of flares, electric sheep and thousand/million point sculptures based purely on lineair equations.
 - prove that it's not artifacts from the random-generator we are seeing here. This could be easily proven by switching the random algorithm. I tried variants, but no formal page for that yet.
+- I feel these are CLEARLY and self evidently fractals. Actual proof might be trying to zoom in and finding the same structures.
 - Snapshot editor (zoom in/out, change colors and params, higher dimensions and pointcount)
 - Creating an animation from snapshots, timed constantly
 - Right now each equation has the same "probability", I might just add a weight and see what that does. This would also allow me to animate between different dimensionalities.
