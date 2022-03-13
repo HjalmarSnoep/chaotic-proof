@@ -1,7 +1,7 @@
 # linear chaos?
 Exploring fractal complexity from JUST iterated linear equation sets and random selection of these sets.
 A surprisingly big fraction (estimated 0.9) of strange attractors in the described, purely linear system seem 
-to have fractal properties. Research has been limited now to linear equations that take the for 
+to have fractal properties. Research has been limited now to a 2D field of 3 sets of 2 linear equations that take the form
 x'=ax+b, where
 -1.1 > a > 1.1 AND -2.1 > b > 2.1
 
