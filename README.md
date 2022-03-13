@@ -25,6 +25,7 @@ In other words: Just playing around. Maybe you might even call this... art?
 - Check pre existing literature for mention of flares, electric sheep and thousand/million point sculptures based purely on lineair equations.
 - Snapshot editor (zoom in/out, change colors and params, higher dimensions and pointcount)
 - Creating an animation from snapshots, timed constantly
+- Right now each equation has the same "probability", I might just add a weight and see what that does. This would also allow me to animate between different dimensionalities.
 - Timing to audio, by having bands/instruments map to parameters.
 - 3D pointcloud visualisation and Blender Export, just for fun and bragging rights on youtube..
 - Possible application in deep neural maps?
