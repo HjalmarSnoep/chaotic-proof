@@ -22,19 +22,21 @@ In other words: Just playing around. Maybe you might even call this... art?
 
 ## Possible next steps:
 - Check pre existing literature for mention of flares, electric sheep and thousand/million point sculptures based purely on lineair equations.
-- prove that it's not artifacts from the random-generator we are seeing here. This could be easily proven by switching the random algorithm. I tried variants, but no formal page for that yet.
+- prove that it's not artifacts from the random-generator we are seeing here. 
+  > This could be easily proven by switching the random algorithm. I tried variants, but no formal page for that yet.
 - I feel these are CLEARLY and self evidently fractals. Actual proof might be trying to zoom in and finding the same structures.
 - Snapshot editor (zoom in/out, change colors and params, higher dimensions and pointcount)
 - Creating an animation from snapshots, timed constantly
-- Right now each equation has the same "probability", I might just add a weight and see what that does. This would also allow me to animate between different dimensionalities.
-  I might ALSO give a gateway probability, meaning how likely are you to move from one equation to another? This will do something, no idea what yet.
-  The idea is based on this principle being the basis of many, many processes in nature, and I cannot imagine all opposing forces will be equally interconnected.
-  So I will probably get more matches and be more versatile in the kind of graphs produced, if I make these connections variable and one way. 
-  It would allow for multiple interconnected "overlays" to be composited with these gateways. Which is interesting for the next point :)
+- Right now each equation has the same "probability", I might just add a weight and see what that does.
+  > This would also allow me to animate between different dimensionalities.
+  > I might ALSO give a gateway probability, meaning how likely are you to move from one equation to another? This will do something, no idea what yet.
+  > The idea is based on this principle being the basis of many, many processes in nature, and I cannot imagine all opposing forces will be equally interconnected.
+  > So I will probably get more matches and be more versatile in the kind of graphs produced, if I make these connections variable and one way. 
+  > It would allow for multiple interconnected "overlays" to be composited with these gateways. Which is interesting for the next point :)
 - evolving the parameters to match as closely as possible any given image, for it to be used as a possibly ridonculous image compression tool.
 - Timing to audio, by having bands/instruments map to parameters.
 - 3D pointcloud visualisation and Blender Export, just for fun and bragging rights on youtube..
 - Possible application describing/matching/predicting clusters in deep neural maps?
 - Calculating the fractal dimension and searching for a parameter correlation. 
-   (a bit hard-boiled to my taste, seems like work.. but if anybody wants to, I'd be interested in the results.. I feel there is a connection, where more balanced opposing forces (shrink/grow, translate left/right) lead to a lower fractal dimension.)
+   > a bit hard-boiled to my taste, seems like work.. but if anybody wants to, I'd be interested in the results.. I feel there is a connection, where more balanced opposing forces (shrink/grow, translate left/right) lead to a lower fractal dimension.
 
