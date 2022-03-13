@@ -1,0 +1,142 @@
+<!doctype HTML>
+<html>
+<head>
+	<style>
+	   body{
+		font-family: sans-serif;
+		}
+	</style>
+	<title>Proof of complexity from linear equations</title>
+</head>
+<body>
+<h1>Visual Proof of fractal complexity from linear equations through million point sculptures</h1>
+<div style="display:inline-block; width: 30%; vertical-align: top;">
+<p>Three (double x and y) linear equations are randomly generated. Each equation has a color associated with it, so we get an idea of the "influence" of each equation on the shape of the formula.</p>
+<p>Then we make a million point sculpture.
+We start with position 0,0. For each next point a random formula is selected from the three.
+Then x and y are transformed and the color is set to the influencing formula.
+A dot is drawn. This process is repeated a million times.</p>
+The minimum and maximum positions of the sculpture is calculated and the sculpture is displayed to fit the screen.
+<hr>
+What we see is the "strange attractor" of the chaotic system created by the interplay of these six equations.
+Because the next formula is selected at random, there is no predicting where each next point will be, but all points total will only fill
+a portion of the screen. This portion divided by the total amount of solutions (width*height) is (an stochastical approximation) the fractal dimension of this figure.
+<hr>
+The number of equations has been chosen for visual clarity, we get complexity from two sets of equations. 
+Up to 5 sets of equations the patterns are clearly fractal. More than 5 sets and the fractals are so complex, that they seem to form shapeless clouds.
+</div>
+<script>
+// define the equation element
+var show_equations=document.createElement("div");
+var zoom=document.createElement("div");
+var w=500;
+var h=500;
+var p=[];
+var nr=3;
+var pointcount=0;
+var brush={x:0,y:0,r:256*Math.random(),g:256*Math.random(),b:256*Math.random()};
+for(var i=0;i<nr;i++) p[i]={
+			a:Math.round( (-1.1+2.2*Math.random())*100 )/100,
+			b:Math.round( (-2.1+4.2*Math.random())*100 )/100,
+			c:Math.round( (-1.1+2.2*Math.random())*100 )/100,
+			d:Math.round( (-2.1+4.2*Math.random())*100 )/100,
+			col: { 
+			     r:256*Math.random(),
+				 g:256*Math.random(),
+				 b:256*Math.random()}
+			};
+var canvas=document.createElement("canvas");
+canvas.style.border="1px solid #f00";
+canvas.style.width="30%";
+canvas.style.minWidth="500px";
+show_equations.style.width="30%";
+show_equations.style.display="inline-block";
+show_equations.style.minWidth="500px";
+show_equations.style.verticalAlign="top";
+zoom.style.width="30%";
+zoom.style.display="inline-block";
+zoom.style.minWidth="500px";
+document.body.appendChild(canvas);
+document.body.appendChild(show_equations);
+document.body.appendChild(zoom);
+var ctx=canvas.getContext("2d");
+canvas.width=w;
+canvas.height=h;
+var counter=0;
+var zoomx=200;
+var zoomy=200;
+animate();
+function animate()
+{
+	counter++;
+	if(counter%100==0)
+	{
+      // reset..
+	  pointcount=0;
+	  brush={x:0,y:0,r:256*Math.random(),g:256*Math.random(),b:256*Math.random()};
+	  ctx.fillStyle="rgba(255,255,255,0.8)";
+	  ctx.fillRect(0,0,w,h);
+	  str="";
+		for(var i=0;i<nr;i++)
+		{		p[i]={
+			a:Math.round( (-1.1+2.2*Math.random())*100 )/100,
+			b:Math.round( (-2.1+4.2*Math.random())*100 )/100,
+			c:Math.round( (-1.1+2.2*Math.random())*100 )/100,
+			d:Math.round( (-2.1+4.2*Math.random())*100 )/100,
+				col: { 
+					 r:256*Math.random(),
+					 g:256*Math.random(),
+					 b:256*Math.random()}
+				};
+				str+="<fieldset style='position: relative;'>";
+				str+="<legend>";
+				str+="EQUATION "+(i+1);
+				str+="</legend>";
+				str+="x'="+p[i].a+"*x";
+				if(p[i].b>=0) str+="+"
+				str+=p[i].b;
+				str+="<br>";
+				str+="y'="+p[i].c+"*y";
+				if(p[i].d>=0) str+="+"
+				str+=p[i].d;
+				str+="<div style='width: 25px; height:25px; position: absolute; right: 15px; top: 15px; border: 1px solid #000;";
+                str+=" background-color: rgb("+p[i].col.r+","+p[i].col.g+","+p[i].col.b+");'> </div>"
+				str+="</fieldset>";
+		}
+		show_equations.innerHTML=str;
+
+	}
+	var minx=1000,maxx=-1000,miny=1000,maxy=-1000;
+	var points=[];
+    for(var t=0;t<10000;t++)
+	{
+		pointcount++;
+		var r=Math.floor(Math.random()*p.length);
+		// adjust brush color..
+		brush.r=p[r].col.r;
+		brush.g=p[r].col.g;
+		brush.b=p[r].col.b;
+		ctx.fillStyle="rgba("+Math.floor(brush.r)+","+Math.floor(brush.g)+","+Math.floor(brush.b)+",0.1)";
+		
+		// adjust brush position..
+		brush.x=brush.x*p[r].a+p[r].b;
+		brush.y=brush.y*p[r].c+p[r].d;
+		
+		if(brush.x<minx) minx=brush.x;
+		if(brush.y<miny) miny=brush.y;
+		if(brush.x>maxx) maxx=brush.x;
+		if(brush.y>maxy) maxy=brush.y;
+		points.push({x:brush.x,y:brush.y});
+	}
+	zoom.innerHTML="pointcount: "+pointcount+"<br>minx: "+minx+"<br>"+"maxx: "+maxx+"<br>miny: "+miny+"<br>"+"maxy: "+maxy+"<br>"
+    for(var t=0;t<10000;t++)
+	{
+		if((maxy-miny)!=0 && (maxx-minx)!=0)
+		ctx.fillRect(w*(points[t].x-minx)/(maxx-minx),h*(points[t].y-miny)/(maxy-miny),1,1);
+	}	
+	window.requestAnimationFrame(animate);
+}
+
+</script>
+</body>
+</htML>
