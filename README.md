@@ -8,18 +8,21 @@ by exploring this most simple and versatile one.
 In other words: Just playing around. Maybe you might even call this... art?
 
 Possible next steps:
-- Check pre existing literature for mention of flares, electric sheep and thousand/million point sculptures based on lineair equations.
-- Calculating the fractal dimension and searching for a parameter correlation.
+- Check pre existing literature for mention of flares, electric sheep and thousand/million point sculptures based purely on lineair equations.
 - Snapshot editor (zoom in/out, change colors and params, higher dimensions and pointcount)
 - Creating an animation from snapshots, timed constantly
 - Timing to audio, by having bands/instruments map to parameters.
 - 3D pointcloud visualisation and Blender Export, just for fun and bragging rights on youtube..
 - Possible application in deep neural maps?
+- Calculating the fractal dimension and searching for a parameter correlation. 
+   (a bit nerdy to my taste, but if anybody wants to, please.. I feel there is a connection, where more balanced opposing forces (shrink/grow, translate left/right) lead to a lower fractal dimension.)
 
 ## site
 https://hjalmarsnoep.github.io/chaotic-proof/
 
 ## examples of sets of 6 linear equations (3x2) for two dimensional fractals
+I feel these are CLEARLY and self evidently fractals.
+Actual proof might be trying to zoom in and finding the same structures.
 ![snapshot1](https://hjalmarsnoep.github.io/chaotic-proof/snapshot-images/snap001.png)
 ![snapshot14](https://hjalmarsnoep.github.io/chaotic-proof/snapshot-images/snap014.png)
 ![snapshot15](https://hjalmarsnoep.github.io/chaotic-proof/snapshot-images/snap015.png)
