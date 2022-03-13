@@ -6,7 +6,7 @@ to have fractal properties. Experimentation has shown this occurs in a 2D field 
 x'=ax+b, where
 -1.1 > a > 1.1 AND -2.1 > b > 2.1
 '''
-In higher dimensionalities fractal properties are less evident.
+In higher complexities (more sets) and higher dimensionalities (larger sets, like x,y,z) fractal properties are less evident, but I highly suspect they will be found.
 
 ## Interactive version (code in docs)
 https://hjalmarsnoep.github.io/chaotic-proof/
