@@ -21,11 +21,13 @@ https://hjalmarsnoep.github.io/chaotic-proof/
 
 ## why?
 I have had this in my head since I was 20, never made a clear version of it. I used it to create 'magic particle' effects for animations back in 1992 on an amiga, happy that javascript now, 30 years onwards, is WAY more powerful now, then that whole setup ever was even using C..
+And I was watching Genius.. Einstein took 11 years creating the theory of general relativity after setting up special relativity and then they got to Picasso and that lead me to the notion of aesthetic realism, which is concerned with the general outlook on reality one has. Well, this is mine.. So, one thing lead to another..
 Don't know if an actual proof has been done already (probably)..
 
 I don't really have a plan with this, beyond proving it to my own satisfaction and getting a feel for chaotic systems, 
 by exploring this most simple and versatile one.
-In other words: Just playing around. Maybe you might even call this... art?
+In other words: A platform for just playing around. Maybe you might even call this... art?
+I might coin a few NFT's from it, if I can translate it to solidity. Seems to be very close to javascript.
 
 ## Possible next steps:
 - Check pre existing literature for mention of flares, electric sheep and thousand/million point sculptures based purely on lineair equations.
