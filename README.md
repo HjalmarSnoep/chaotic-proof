@@ -1,6 +1,9 @@
 # linear chaos?
 Attempt at a visual/animated proof of fractal complexity from JUST linear equations and random selection of these equations.
 
+## Interactive version (code in docs)
+https://hjalmarsnoep.github.io/chaotic-proof/
+
 ## examples of sets of 6 linear equations (3x2) for two dimensional fractals
 I feel these are CLEARLY and self evidently fractals.
 Actual proof might be trying to zoom in and finding the same structures.
@@ -10,8 +13,6 @@ Actual proof might be trying to zoom in and finding the same structures.
 ![snapshot16](https://hjalmarsnoep.github.io/chaotic-proof/snapshot-images/snap016.png)
 ![snapshot17](https://hjalmarsnoep.github.io/chaotic-proof/snapshot-images/snap017.png)
 
-## play with it.
-https://hjalmarsnoep.github.io/chaotic-proof/
 
 ## why?
 I have had this in my head since I was 19, never made a clear version of it. I used it to create 'magic particle' effects for animations back in 2001 on an amiga, happy that javascript now is WAY more powerful now, then that ever was..
