@@ -1,5 +1,9 @@
 # linear chaos?
 Exploring fractal complexity from JUST iterated linear equation sets and random selection of these sets.
+A surprisingly big fraction (estimated 0.9) of strange attractors in the described, purely linear system seem 
+to have fractal properties. Research has been limited now to linear equations that take the for 
+x'=ax+b, where
+-1.1 > a > 1.1 AND -2.1 > b > 2.1
 
 ## Interactive version (code in docs)
 https://hjalmarsnoep.github.io/chaotic-proof/
