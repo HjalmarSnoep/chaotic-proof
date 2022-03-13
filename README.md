@@ -20,7 +20,7 @@ https://hjalmarsnoep.github.io/chaotic-proof/
 
 
 ## why?
-I have had this in my head since I was 19, never made a clear version of it. I used it to create 'magic particle' effects for animations back in 2001 on an amiga, happy that javascript now is WAY more powerful now, then that ever was..
+I have had this in my head since I was 20, never made a clear version of it. I used it to create 'magic particle' effects for animations back in 1992 on an amiga, happy that javascript now, 30 years onwards, is WAY more powerful now, then that whole setup ever was even using C..
 Don't know if an actual proof has been done already (probably)..
 
 I don't really have a plan with this, beyond proving it to my own satisfaction and getting a feel for chaotic systems, 
