@@ -1,4 +1,4 @@
-# chaotic-proof
+# linear chaos?
 Attempt at a visual/animated proof of fractal complexity from JUST linear equations and random selection of these equations.
 
 ## examples of sets of 6 linear equations (3x2) for two dimensional fractals
