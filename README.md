@@ -23,6 +23,7 @@ In other words: Just playing around. Maybe you might even call this... art?
 
 ## Possible next steps:
 - Check pre existing literature for mention of flares, electric sheep and thousand/million point sculptures based purely on lineair equations.
+- prove that it's not artifacts from the random-generator we are seeing here. This could be easily proven by switching the random algorithm. I tried variants, but no formal page for that yet.
 - Snapshot editor (zoom in/out, change colors and params, higher dimensions and pointcount)
 - Creating an animation from snapshots, timed constantly
 - Right now each equation has the same "probability", I might just add a weight and see what that does. This would also allow me to animate between different dimensionalities.
