@@ -34,7 +34,8 @@ In other words: Just playing around. Maybe you might even call this... art?
   > So I will probably get more matches and be more versatile in the kind of graphs produced, if I make these connections variable and one way. 
   > It would allow for multiple interconnected "overlays" to be composited with these gateways. Which is interesting for the next point :)
 - evolving the parameters to match as closely as possible any given image, for it to be used as a possibly ridonculous image compression tool.
-- Timing to audio, by having bands/instruments map to parameters.
+- Timing to audio, by having frequency bands / midi instruments map to parameters.
+  > for a nice VJ tool.
 - 3D pointcloud visualisation and Blender Export, just for fun and bragging rights on youtube..
 - Possible application describing/matching/predicting clusters in deep neural maps?
 - Calculating the fractal dimension and searching for a parameter correlation. 
