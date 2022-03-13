@@ -26,6 +26,11 @@ In other words: Just playing around. Maybe you might even call this... art?
 - Snapshot editor (zoom in/out, change colors and params, higher dimensions and pointcount)
 - Creating an animation from snapshots, timed constantly
 - Right now each equation has the same "probability", I might just add a weight and see what that does. This would also allow me to animate between different dimensionalities.
+  I might ALSO give a gateway probability, meaning how likely are you to move from one equation to another? This will do something, no idea what yet.
+  The idea is based on this principle being the basis of many, many processes in nature, and I cannot imagine all opposing forces will be equally interconnected.
+  So I will probably get more matches and be more versatile in the kind of graphs produced, if I make these connections variable and one way. 
+  It would allow for multiple interconnected "overlays" to be composited with these gateways. Which is interesting for the next point :)
+- evolving the parameters to match as closely as possible any given image, for it to be used as a possibly ridonculous image compression tool.
 - Timing to audio, by having bands/instruments map to parameters.
 - 3D pointcloud visualisation and Blender Export, just for fun and bragging rights on youtube..
 - Possible application in deep neural maps?
