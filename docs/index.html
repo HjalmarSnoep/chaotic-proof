@@ -26,10 +26,21 @@ a portion of the screen. This portion divided by the total amount of solutions (
 The number of equations has been chosen for visual clarity, we get complexity from two sets of equations. 
 Up to 5 sets of equations the patterns are clearly fractal. More than 5 sets and the fractals are so complex, that they seem to form shapeless clouds.</small>
 </div>
+<div id="links"><h2>Morphing Snapshots</h2>
+<button id="take snapshot">Take snapshot(0)</button>
+<div>
+	<canvas id="s0" width="50" height="50"></canvas>
+	<canvas id="s1" width="50" height="50"></canvas>
+</div>
+<button id="morph snapshots" disabled>Show Morph</button>
+</div>
 <script>
 // define the equation element
 var show_equations=document.createElement("div");
-var zoom=document.createElement("div");
+var links=document.getElementById("links");
+var snapshots=[];
+document.getElementById("take snapshot").addEventListener("click",takeSnapshot);
+var zoom=document.createElement("p");
 var w=500;
 var h=500;
 var p=[];
@@ -54,12 +65,8 @@ show_equations.style.width="30%";
 show_equations.style.display="inline-block";
 show_equations.style.minWidth="500px";
 show_equations.style.verticalAlign="top";
-zoom.style.width="30%";
-zoom.style.display="inline-block";
-zoom.style.minWidth="500px";
 document.body.appendChild(canvas);
 document.body.appendChild(show_equations);
-document.body.appendChild(zoom);
 var ctx=canvas.getContext("2d");
 canvas.width=w;
 canvas.height=h;
@@ -103,8 +110,11 @@ function animate()
 				str+="<div style='width: 25px; height:25px; position: absolute; right: 15px; top: 15px; border: 1px solid #000;";
                 str+=" background-color: rgb("+p[i].col.r+","+p[i].col.g+","+p[i].col.b+");'> </div>"
 				str+="</fieldset>";
+				str+="<div id='zoom'></div>"
 		}
 		show_equations.innerHTML=str;
+		show_equations.appendChild(zoom);
+		show_equations.appendChild(links);
 
 	}
 	var minx=1000,maxx=-1000,miny=1000,maxy=-1000;
@@ -117,7 +127,7 @@ function animate()
 		brush.r=p[r].col.r;
 		brush.g=p[r].col.g;
 		brush.b=p[r].col.b;
-		ctx.fillStyle="rgba("+Math.floor(brush.r)+","+Math.floor(brush.g)+","+Math.floor(brush.b)+",0.1)";
+		ctx.fillStyle="rgba("+Math.floor(brush.r)+","+Math.floor(brush.g)+","+Math.floor(brush.b)+",0.01)";
 		
 		// adjust brush position..
 		brush.x=brush.x*p[r].a+p[r].b;
@@ -137,7 +147,35 @@ function animate()
 	}	
 	window.requestAnimationFrame(animate);
 }
-
+function takeSnapshot()
+{
+  var nr= snapshots.length;
+  if(nr==2)
+  {
+	document.getElementById("morph snapshots").removeAttribute('disabled');
+  }else
+  {
+	document.getElementById("morph snapshots").setAttribute("disabled",true);
+  }
+  if(nr>=2)
+  {
+     console.log("clear snapshots");
+	document.getElementById("s0").getContext("2d").clearRect(0,0,50,50);
+	document.getElementById("s1").getContext("2d").clearRect(0,0,50,50);
+    document.getElementById("s0").style.border="";
+    document.getElementById("s1").style.border="";
+	snapshots=[];
+	nr=0;
+  }
+  var snapshot_canvas=document.getElementById("s"+(nr));
+  console.log("snapshot canvas: "+snapshot_canvas.id);
+  snapshot_canvas.style.border="1px solid #888";
+  var snapshot_ctx=snapshot_canvas.getContext("2d");
+  snapshot_ctx.drawImage(canvas,0,0,500,500,0,0,50,50);
+  snapshots.push( JSON.parse(JSON.stringify(p)) );
+  console.log(snapshots);
+  document.getElementById("take snapshot").innerHTML="take Snapshot ("+nr+")";
+}
 </script>
 </body>
 </htML>
